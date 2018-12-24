@@ -1,0 +1,25 @@
+{
+  "name": "musicstats",
+  "version": "1.0.0",
+  "description": "Statistics on played music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/solracid/musicstats.git"
+  },
+  "keywords": [
+    "musicstats",
+    "playedmusic",
+    "music",
+    "node"
+  ],
+  "author": "Solracid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solracid/musicstats/issues"
+  },
+  "homepage": "https://github.com/solracid/musicstats#readme"
+}
