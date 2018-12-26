@@ -1,25 +1,30 @@
 {
-  "name": "musicstats",
+  "name": "recipies",
   "version": "1.0.0",
-  "description": "Statistics on played music",
+  "description": "Recipies of my Grandma",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/solracid/musicstats.git"
+    "url": "git+ssh://git@github.com/solracid/recipies.git"
   },
   "keywords": [
-    "musicstats",
-    "playedmusic",
-    "music",
-    "node"
+    "recipìes",
+    "grandma",
+    "traditional",
+    "food",
+    "node.js",
+    "wordpress"
   ],
   "author": "Solracid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/solracid/musicstats/issues"
+    "url": "https://github.com/solracid/recipìes/issues"
   },
-  "homepage": "https://github.com/solracid/musicstats#readme"
+  "homepage": "https://github.com/solracid/recipies#readme",
+  "dependencies": {
+    "keystone": "^4.0.0"
+  }
 }
