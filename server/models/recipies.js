@@ -4,7 +4,7 @@ var Types = keystone.Field.Types;
 var path = require('path');
 
 //Create Recipies List
-var Recipies = new keystone.List('recipies', {
+var Recipe = new keystone.List('recipies', {
     autokey: { path: 'slug', from: 'name', unique: true },
     defaultSort: '-createdAt',
   });
@@ -25,7 +25,39 @@ var recipeImgStorage = new keystone.Storage({
 });
 
 //Add Recipies-Model fields
-Recipies.add({
-    name:{ Type: Types.Name, required: true, index: true },
-
+Recipe.add({
+  name: { 
+    type: String, 
+    required: true },
+  state: { 
+    type: Types.Select, 
+    options: 'draft, published, archived', 
+    default: 'draft' },
+  author: { 
+    type: Types.Relationship, 
+    ref: 'User' 
+  },
+  createdAt: { 
+    type: Date, 
+    default: Date.now },
+  publishedAt: Date,
+  image: {
+    type: Types.File,
+    storage: recipeImgStorage,
+    mimetype: '.jpeg, .jpg, .gif, .svg',
+  },
+  ingredientList: { 
+    type: Types.Html, 
+    wysiwyg: true, 
+    height: 150 
+  },
+  cookingInstructions: {
+    type: Types.Html,
+    wysiwyg: true,
+    height: 500
+  }
 });
+
+// Setting the default order of the columns on the admin tab
+Recipe.defaultColumns = 'name, state|20%, author, publishedAt|15%';
+Recipe.register();
