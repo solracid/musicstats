@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "compile": "webpack --config webpack.config.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,8 @@
   "homepage": "https://github.com/solracid/recipies#readme",
   "dependencies": {
     "keystone": "^4.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
