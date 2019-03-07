@@ -21,5 +21,6 @@ exports = module.exports = function (app) {
         };
         // Send the html boilerplate
         res.send(renderFullPage());
+
       });
     };

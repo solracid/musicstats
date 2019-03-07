@@ -19,7 +19,6 @@ module.exports = {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-        },{
           use: {
             loader: 'babel-loader',
             options: {
@@ -27,6 +26,7 @@ module.exports = {
                 '@babel/preset-react',
                 '@babel/preset-env',
               ],
+              compact: false,
             },
           },
         }
@@ -36,3 +36,4 @@ module.exports = {
       extensions: ['.js', '.jsx', '.scss'],
     },
   };
+
