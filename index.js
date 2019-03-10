@@ -17,7 +17,7 @@ keystone.init({
   // or run transformation scripts against your database.
   'auto update': true,
   // The url for your MongoDB connection
-  'mongo': 'mongodb://localhost/keystonereactcms',
+  'mongo': 'mongodb://127.0.0.1:27017/keystonereactcms',
   // Whether to enable built-in authentication for Keystone's Admin UI,
   'auth': true,
   // The key of the Keystone List for users, required if auth is set to true
@@ -34,3 +34,5 @@ keystone.set('routes', require('./server/routes'))
 
 // Start Keystone
 keystone.start();
+
+console.log("Keystone started");
