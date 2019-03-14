@@ -18,5 +18,12 @@ describe('Test Keystone CMS own features', () => {
         expect(Keystone.mongoose.connections._listening).toBeTruthy;
         expect(Keystone.mongoose.connecions.length).toBeGreaterThan(0);
     });
+    
+    test('Keystone imports custom Schemas', () => {
+        keystone.import('./server/models');
+        
+        expect(Keystone.list('recipe')).toBeDefined;
+        expect(Keystone.list('User')).toBeDefined;
+    });
 });
 
