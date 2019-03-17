@@ -1,17 +1,20 @@
-var Keystone = require('keystone');
+const Keystone = require('keystone');
 
-beforeAll(()=> {
+beforeAll( done => {
     Keystone.init({
         'name': 'Keystone CMS',
         'cookie secret': 'My_Biscuit',
       });
     Keystone.start();
+
+    done();
 })
 
 describe('Test Keystone CMS own features', () => {
 
-    test('Keystone connects to MongoDB', () => {
+    test('Keystone connects to MongoDB', (done) => {
         expect(Keystone.mongoose.connections._listening).toBeTruthy;
+        done();
     });
 });
 
