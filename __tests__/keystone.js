@@ -1,11 +1,11 @@
 const Keystone = require('keystone');
 
-beforeAll(()=> {
+beforeAll(async()=> {
     Keystone.init({
         'name': 'Keystone CMS',
         'cookie secret': 'My_Biscuit',
       });
-    Keystone.start();
+    await Keystone.start();
 })
 
 afterAll(()=> {
