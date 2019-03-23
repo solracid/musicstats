@@ -10,14 +10,22 @@ beforeAll( done => {
     done();
 })
 
+afterAll(()=> {
+    Keystone.closeDatabaseConnection(()=>{})
+});
+
 describe('Test Keystone CMS own features', () => {
 
     test('Keystone connects to MongoDB', (done) => {
         expect(Keystone.mongoose.connections._listening).toBeTruthy;
-        done();
+        expect(Keystone.mongoose.connecions.length).toBeGreaterThan(0);
+    });
+    
+    test('Keystone imports custom Schemas', () => {
+        keystone.import('./server/models');
+        
+        expect(Keystone.list('recipe')).toBeDefined;
+        expect(Keystone.list('User')).toBeDefined;
     });
 });
 
-// afterAll(()=> {
-//     Keystone.keystone.closeDatabaseConnection(()=>{})
-// })
