@@ -7,8 +7,9 @@
   "scripts": {
     "compile": "webpack --config webpack.config.js",
     "start": "node index.js",
-    "test": "jest",
-    "clear_jest": "jest --clearCache"
+    "jest": "jest",
+    "clear_jest": "jest --clearCache",
+    "test": "nodemon --exec 'mocha -R min'"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,9 @@
   "dependencies": {
     "babel-jest": "^24.3.1",
     "keystone": "^4.0.0",
+    "mocha": "^6.0.2",
+    "mongoose": "^5.4.19",
+    "nodemon": "^1.18.10",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "underscore": "^1.9.1"
