@@ -33,6 +33,19 @@ keystone.import('./server/models');
 keystone.set('routes', require('./server/routes'))
 
 // Start Keystone
-keystone.start();
+keystone.start({
+  onMount: function() {
+      console.log('KeystoneJS mounted');
+  },
+  onStart: function() {
+      console.log('KeystoneJS started');  
+  },
+  onHttpServerCreated: function() {
+      console.log('KeystoneJS HTTP');
+  },
+  onHttpsServerCreated: function() {
+      console.log('KeystoneJS HTTPS');
+  }
+});
 
 console.log("Keystone started");
