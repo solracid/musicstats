@@ -1,10 +1,9 @@
 const Keystone = require('keystone');
 const assert = require('chai').assert;
 
-
 describe('Posts', function() {
     
-    beforeAll('Start Keystone', function(done){
+    before('Start Keystone', function(done){
         console.log('Before Init');
 
         Keystone.init({
