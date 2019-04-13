@@ -1,10 +1,9 @@
 
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
-var path = require('path');
 
 //Create Recipies List
-var Recipe = new keystone.List('recipies', {
+var Recipe = new keystone.List('recipes', {
     autokey: { path: 'slug', from: 'name', unique: true },
     defaultSort: '-createdAt',
   });

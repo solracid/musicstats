@@ -3,8 +3,7 @@ const assert = require('chai').assert;
 
 describe('Posts', function() {
     
-    before('Start Keystone', function(done){
-        console.log('Before Init');
+    before(function(done){
 
         Keystone.init({
             'name': 'Keystone CMS',
@@ -12,24 +11,11 @@ describe('Posts', function() {
             'cookie secret': 'My_Biscuit',
         });
 
-        console.log('Keystone.init');
-
         Keystone.import('../server/models/');
 
-        Keystone.start({
-          onMount: function() {
-              console.log('KeystoneJS mounted');
-          },
-          onStart: function() {
-              console.log('KeystoneJS started');  
-          },
-          onHttpServerCreated: function() {
-              console.log('KeystoneJS HTTP');
-          },
-          onHttpsServerCreated: function() {
-              console.log('KeystoneJS HTTPS');
-          }
-        });
+        Keystone.start({});
+
+        done();
     });
     
     
@@ -38,6 +24,12 @@ describe('Posts', function() {
       console.log('Connecting to ' + dbURI)
       Keystone.mongoose.connect(dbURI, done);
     });
+
+    after(function(done){
+      Keystone.mongoose.connection.close();
+      console.log("Mongoose connection closed")
+      done();
+    });
    
     it('Mongoose is connected to Mongo', function(done){
       assert.equal(Keystone.mongoose.connection.readyState, 1);
@@ -45,14 +37,12 @@ describe('Posts', function() {
     });
    
     it('should be a Mongoose Model', function(done) {
-      Post = Keystone.list('Post');
+      Recipe = Keystone.list('recipes');
    
-      assert.isObject(Post);
-      assert.Property(Post, 'model');
-      assert.isFunction(Post.model); 
-      
-      assert.Property(Post, 'schema');
-      assert.isObject(Post.schema);
+      assert.isObject(Recipe);
+      assert.property(Recipe, 'name');     
+      assert.property(Recipe, 'state');
+      assert.isObject(Recipe.ingredientList);
    
       done();
     });

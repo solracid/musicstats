@@ -9,7 +9,7 @@
     "start": "node index.js",
     "jest": "jest",
     "clear_jest": "jest --clearCache",
-    "test": "nodemon --exec \"mocha --config ./test/.mocharc.js\""
+    "mocha": "nodemon --exec mocha"
   },
   "repository": {
     "type": "git",
