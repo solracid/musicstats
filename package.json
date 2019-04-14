@@ -9,7 +9,8 @@
     "start": "node index.js",
     "jest": "jest",
     "clear_jest": "jest --clearCache",
-    "mocha": "nodemon --exec mocha"
+    "mocha": "nodemon --exec mocha",
+    "testKeystone": "mocha ./test/keystone/keystoneServer.main.js --exit"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "babel-jest": "^24.3.1",
     "keystone": "^4.0.0",
     "mocha": "^6.0.2",
+    "moment": "^2.24.0",
     "mongoose": "^5.4.19",
     "nodemon": "^1.18.10",
     "react": "^16.7.0",

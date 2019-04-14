@@ -6,7 +6,7 @@ module.exports = {
     recursive: './test/mocha/',
     reporter: 'spec',
     slow: 75,
-    timeout: 2000,
+    timeout: 5000,
     ui: 'bdd'
   };
 
