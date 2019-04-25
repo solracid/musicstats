@@ -15,6 +15,9 @@ describe("KeystoneJS Server Tests", function () {
         'mongo': 'mongodb://127.0.0.1:27017/mocha_tests',
         'cookie secret': 'My_Biscuit',
     });
+    
+    Keystone.import('./../../server/models/');
+    
     Keystone.start({
       onMount: function () {
         console.log([moment().format('HH:mm:ss:SSS')] + ' e2e: KeystoneJS mounted Successfuly');
@@ -34,6 +37,7 @@ describe("KeystoneJS Server Tests", function () {
 
   importTest("Keystone connects to the DB", './keystoneTests/mongooseConnection.spec');
   importTest("Keystone registers Schemas as Lists", './keystoneTests/registerLists.spec');
+  importTest("A new Recipe can be saved", './keystoneTests/newRecipe.spec');
   
   after(function () {
       console.log("after all tests");
