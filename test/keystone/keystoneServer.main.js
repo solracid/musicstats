@@ -37,6 +37,7 @@ describe("KeystoneJS Server Tests", function () {
 
   importTest("Keystone connects to the DB", './keystoneTests/mongooseConnection.spec');
   importTest("Keystone registers Schemas as Lists", './keystoneTests/registerLists.spec');
+  importTest("The first User can be defined", './keystoneTests/newUser.spec');
   importTest("A new Recipe can be saved", './keystoneTests/newRecipe.spec');
   
   after(function () {
